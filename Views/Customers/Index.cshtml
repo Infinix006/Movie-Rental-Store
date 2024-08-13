@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Movie_Rental_Store.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+
+@{
+    if (!Model.Any())
+    {
+        <p>We dont have any customers yet.</p>
+    }
+    else
+    {
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Membership Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var customers in Model)
+                {
+                    <tr>
+                        <td><a href="@Url.Action("Edit","Customers",new {id = customers.Id})">@customers.Name</a></td>
+                    <td>@customers.MembershipType.Name</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    }
+}
+
+
+
+

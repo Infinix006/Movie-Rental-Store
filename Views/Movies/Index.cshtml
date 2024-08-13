@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Movie_Rental_Store.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+<a class="btn btn-primary mb-3" href="@Url.Action("MovieForm","Movies")">New Movie</a>
+ 
+@{
+    if (!Model.Any())
+    {
+        <p>We dont have any movie.</p>
+    }
+    else
+    {
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+                    <tr>
+                        <td><a href="@Url.Action("Edit","Movies", new {id = movie.Id})">@movie.Name</a></td>
+                        <td>@movie.Genres.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+
+
+
+
+
