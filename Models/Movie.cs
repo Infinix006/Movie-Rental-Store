@@ -11,9 +11,12 @@ namespace Movie_Rental_Store.Models
     {
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+
         public Genre Genres { get; set; }
+
 
         [Display(Name = "Genre")]
         [Required]
@@ -30,7 +33,8 @@ namespace Movie_Rental_Store.Models
 
         [Display(Name = "Number in Stock")]
         [Required]
-        public int NoInStock { get; set; }
+        [Range(1, 20)]
+        public int NoInStock { get; set; } = 0;
 
     }
 }

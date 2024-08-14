@@ -31,6 +31,7 @@ namespace Movie_Rental_Store.Controllers
 
             var viewModel = new CustomerFormViewModel()
             {
+                Customers = new Customer(),
                 MembershipTypes = MembershipType,
             };
                         
@@ -38,6 +39,7 @@ namespace Movie_Rental_Store.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(CustomerFormViewModel ViewModel)
         {
             if (!ModelState.IsValid)

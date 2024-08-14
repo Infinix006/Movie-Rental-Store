@@ -22,8 +22,11 @@ namespace Movie_Rental_Store.Models
         public byte MembershipTypeId { get; set; }
 
 
-        //[DataType(DataType.Time)]
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? BirthDate { get; set; }
+
+
+        
     }
 }

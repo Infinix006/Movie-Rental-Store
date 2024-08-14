@@ -50,9 +50,20 @@ namespace Movie_Rental_Store.Controllers
             return View(movie);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(MoviesFormViewModel ViewModel)
         {
-            if(ViewModel.Movie.Id == 0)
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MoviesFormViewModel()
+                {
+                    Movie = ViewModel.Movie,
+                    Genre = _context.Genres.ToList()
+                };
+                return View("MovieForm",viewModel);
+            }
+            if (ViewModel.Movie.Id == 0)
             {
                 _context.Movies.Add(ViewModel.Movie);
             }
