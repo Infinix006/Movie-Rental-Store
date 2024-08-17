@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Movie_Rental_Store.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Movie_Rental_Store.Data;
-using Movie_Rental_Store.Models;
 
 namespace Movie_Rental_Store.Controllers.Api
 {
@@ -29,7 +28,7 @@ namespace Movie_Rental_Store.Controllers.Api
         {
             var customers = _context.Customers.SingleOrDefault(c => c.Id == id);
 
-            if (customers == null) 
+            if (customers == null)
                 return NotFound();
 
             return Ok(customers);
@@ -47,15 +46,15 @@ namespace Movie_Rental_Store.Controllers.Api
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            return Created(new Uri(Request.RequestUri + "/" + customer.Id),customer);
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), customer);
         }
 
 
         //PUT /Api/Customers/1
-        [HttpPut]   
+        [HttpPut]
         public IHttpActionResult UpdateCustomer(int id, Customer customer)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 return BadRequest();
             }
@@ -80,7 +79,7 @@ namespace Movie_Rental_Store.Controllers.Api
         [HttpDelete]
         public IHttpActionResult DeleteCustomer(int id)
         {
-            var customerInDb = _context.Customers.Single(m =>m.Id == id);
+            var customerInDb = _context.Customers.Single(m => m.Id == id);
 
             if (customerInDb == null)
                 return NotFound();

@@ -19,6 +19,7 @@ textarea {
     max-width: 280px;
 }
 
+
 .input-validation-error {
     border: 2px solid red;
 }
@@ -30,3 +31,4 @@ textarea {
 .validation-summary-errors span {
     color: red;
 }
+

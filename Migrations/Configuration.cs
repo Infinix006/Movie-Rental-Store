@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Movie_Rental_Store.Data.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Movie_Rental_Store.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Movie_Rental_Store.Data.ApplicationDbContext context)
+        protected override void Seed(Movie_Rental_Store.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

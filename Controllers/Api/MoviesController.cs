@@ -1,5 +1,4 @@
-﻿using Movie_Rental_Store.Data;
-using Movie_Rental_Store.Models;
+﻿using Movie_Rental_Store.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +10,7 @@ namespace Movie_Rental_Store.Controllers.Api
 {
     public class MoviesController : ApiController
     {
+        
         private ApplicationDbContext _context;
 
         public MoviesController()
@@ -30,7 +30,7 @@ namespace Movie_Rental_Store.Controllers.Api
         {
             var movie = _context.Movies.Single(x => x.Id == id);
 
-            if (movie == null) 
+            if (movie == null)
                 return NotFound();
 
             return Ok(movie);
@@ -53,14 +53,14 @@ namespace Movie_Rental_Store.Controllers.Api
 
         //PUT /Api/Movies/1
         [HttpPut]
-        public IHttpActionResult UpdateMovies(int id,  Movie movie)
+        public IHttpActionResult UpdateMovies(int id, Movie movie)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
             var moviesInDb = _context.Movies.Single(m => m.Id == id);
 
-            if(moviesInDb == null)
+            if (moviesInDb == null)
                 return NotFound();
 
             moviesInDb.Name = movie.Name;
@@ -87,7 +87,6 @@ namespace Movie_Rental_Store.Controllers.Api
 
             return Ok(movieInDb);
         }
-
-
+        
     }
 }

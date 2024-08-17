@@ -24,12 +24,11 @@ namespace Movie_Rental_Store
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                        
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
-                      "~/Content/DataTables/css/dataTables.bootstrap4.css", 
+                       "~/Content/DataTables/css/dataTables.bootstrap4.css",
                       "~/Content/site.css"));
         }
     }

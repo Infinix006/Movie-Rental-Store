@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
@@ -18,19 +19,9 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Customers", "Index", "Customers", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Movie", "Index", "Movies", new { area = "" }, new { @class = "nav-link" })</li>
-                    @*                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    *@
+                    <li>@Html.ActionLink("Movies", "Index", "Movies", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
-                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-                    <li>
-                        <a class="nav-link"> Register </a>
-                    </li>
-                    <li>
-                        <a class="nav-link"> Log In </a>
-                    </li>
-
-                </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
@@ -41,10 +32,9 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+
     @Scripts.Render("~/bundles/lib")
     @Scripts.Render("~/bundles/bootstrap");
     @RenderSection("scripts", required: false)
 </body>
-<script src=></script>
-<link href= rel="stylesheet" />
 </html>
