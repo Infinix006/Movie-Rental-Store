@@ -18,13 +18,14 @@ namespace Movie_Rental_Store.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         //GET /Api/Movies
         public IEnumerable<Movie> GetMovies()
         {
             return _context.Movies.ToList();
         }
 
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         //GET /Api/Movies/1
         public IHttpActionResult GetMovies(int id)
         {
@@ -36,7 +37,7 @@ namespace Movie_Rental_Store.Controllers.Api
             return Ok(movie);
         }
 
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         //POST /Api/Movies
         [HttpPost]
         public IHttpActionResult CreateMovies(Movie movie)
@@ -51,6 +52,7 @@ namespace Movie_Rental_Store.Controllers.Api
             return Created(Request.RequestUri + "/" + movie.Id, movie);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         //PUT /Api/Movies/1
         [HttpPut]
         public IHttpActionResult UpdateMovies(int id, Movie movie)
@@ -73,6 +75,7 @@ namespace Movie_Rental_Store.Controllers.Api
             return Ok(moviesInDb);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         //DELETE /Api/Movies/1
         [HttpDelete]
         public IHttpActionResult DeleteMovies(int id)

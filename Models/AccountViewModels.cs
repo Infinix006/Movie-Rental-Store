@@ -79,6 +79,15 @@ namespace Movie_Rental_Store.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Aadhar Card")]
+        public string AadharCard { get; set; }
+
+
+        [Required]
+        [StringLength(10)]
+        public string Phone { get; set; }
     }
 
     public class ResetPasswordViewModel

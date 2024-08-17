@@ -235,6 +235,14 @@
     <Compile Include="Migrations\202408161924297_PopulateGenre.Designer.cs">
       <DependentUpon>202408161924297_PopulateGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408171416244_SeedUsers.cs" />
+    <Compile Include="Migrations\202408171416244_SeedUsers.Designer.cs">
+      <DependentUpon>202408171416244_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408171749008_AddAadharCardToApplicationUser.cs" />
+    <Compile Include="Migrations\202408171749008_AddAadharCardToApplicationUser.Designer.cs">
+      <DependentUpon>202408171749008_AddAadharCardToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -243,6 +251,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -559,9 +568,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -614,6 +624,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408161924297_PopulateGenre.resx">
       <DependentUpon>202408161924297_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408171416244_SeedUsers.resx">
+      <DependentUpon>202408171416244_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408171749008_AddAadharCardToApplicationUser.resx">
+      <DependentUpon>202408171749008_AddAadharCardToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
